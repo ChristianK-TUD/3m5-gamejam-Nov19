@@ -22,13 +22,13 @@ public class Inventory : MonoBehaviour
        this.slider.value -= alcoholUse * Time.deltaTime;
     }
 
+    public void AddAlcohol(float amount)
+    {
+       this.slider.value += amount;
+    }
+
     public void AddItem(Sprite im, string name)
     {
-       if (name == "Booze")
-       {
-          slider.value = 1;
-       }
-
        //insert in first possible slot
        for (var i = 0; i < 5; i++)
        {

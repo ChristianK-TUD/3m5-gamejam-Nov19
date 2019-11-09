@@ -87,6 +87,9 @@ public class KeyboardController : MonoBehaviour
                 collider.gameObject.GetComponentInParent<DoorScript>().Open();
              } 
              break;
+          case "Booze":
+             inventory.AddAlcohol(0.5f);
+             break;
        }
     }
 
