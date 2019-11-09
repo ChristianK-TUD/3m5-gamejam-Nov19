@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
@@ -9,50 +10,76 @@ public class KeyboardController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       camera_offset = camera.transform.position - transform.position;
+       _rb = GetComponent<Rigidbody>();
+       _cameraOffset = Camera.transform.position - transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-       is_forward = Input.GetKey(KeyCode.W);
-       is_right = Input.GetKey(KeyCode.D);
-       is_left = Input.GetKey(KeyCode.A);
-       is_backward = Input.GetKey(KeyCode.S);
+       _isForward = Input.GetKey(KeyCode.W);
+       _isRight = Input.GetKey(KeyCode.D);
+       _isLeft = Input.GetKey(KeyCode.A);
+       _isBackward = Input.GetKey(KeyCode.S);
 
        move();
 
        relocate_camera();
+
+       limit_speed();
     }
 
     void move()
     {
        var movement = Vector3.zero;
-       if (is_forward) movement.z += speed;
-       if (is_right) movement.x += speed;
-       if (is_left) movement.x -= speed;
-       if (is_backward) movement.z -= speed;
+       if (_isForward) movement.z += 1;
+       if (_isRight) movement.x += 1;
+       if (_isLeft) movement.x -= 1;
+       if (_isBackward) movement.z -= 1;
 
-       movement = movement.normalized * speed * Time.deltaTime;
+       movement = movement.normalized * Thrust;
 
-       this.transform.position += movement;
+       if (Math.Abs(movement.magnitude) < 0.001)
+       {
+          //slow down
+          if (_rb.velocity.magnitude < MinSpeed)
+          {
+             _rb.velocity = Vector3.zero;
+          }
+          else
+          {
+             movement = - _rb.velocity.normalized * SlowDownFactor;
+          }
+       }
+
+       _rb.AddForce(movement);
     }
 
     void relocate_camera()
     {
-       camera.transform.position = transform.position + camera_offset;
+       Camera.transform.position = transform.position + _cameraOffset;
+    }
+
+    void limit_speed()
+    {
+       if (_rb.velocity.magnitude > MaxSpeed)
+       {
+          _rb.velocity = _rb.velocity.normalized * MaxSpeed;
+       }
     }
    
-    Vector3 camera_offset;
+    private Vector3 _cameraOffset;
 
-    bool is_forward;
-    bool is_right;
-    bool is_left;
-    bool is_backward;
+    private bool _isForward;
+    private bool _isRight;
+    private bool _isLeft;
+    private bool _isBackward;
 
-    public GameObject camera;
+    public GameObject Camera;
+    private Rigidbody _rb;
 
-    public float speed;
-
-    public Transform target;
+    public float MaxSpeed;
+    public float MinSpeed;
+    public float Thrust;
+    public float SlowDownFactor;
 }
