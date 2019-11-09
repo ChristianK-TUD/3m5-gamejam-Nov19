@@ -52,15 +52,18 @@ public class Inventory : MonoBehaviour
 
     public bool removeItem(string name)
     {
+       var result = false;
        for (var i = 0; i < 5; i++)
        {
           if (names[i] != name) continue;
           names[i] = "";
           sprites[i] = defaultIcon;
-          return true;
+          result = true;
+          break;
        }
 
-       return false;
+       UpdateImages();
+       return result;
     }
 
     private Image[] images;

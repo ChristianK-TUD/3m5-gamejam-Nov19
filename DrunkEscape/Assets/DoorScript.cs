@@ -21,6 +21,7 @@ public class DoorScript : MonoBehaviour
     public void Open()
     {
        open = true;
+       Debug.Log("Door opened!");
     }
 
     private bool isOpen()

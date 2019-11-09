@@ -54,8 +54,10 @@ public class KeyboardController : MonoBehaviour
              movement = - _rb.velocity.normalized * SlowDownFactor;
           }
        }
-
+       
        _rb.AddForce(movement);
+
+       if (Math.Abs(_rb.velocity.magnitude) > 0.1) transform.forward = _rb.velocity;
     }
 
     void relocate_camera()
@@ -73,15 +75,18 @@ public class KeyboardController : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-       if (collider.name == "Key")
+       Debug.Log(collider.name);
+       switch (collider.name)
        {
-           inventory.AddItem(key, "Key");
-       } else if (collider.name.Contains("door") && !collider.name.Contains("wall"))
-       {
-          if (inventory.removeItem("Key"))
-          {
-             GetComponent<DoorScript>().Open();
-          }
+          case "Key":
+             inventory.AddItem(key, "Key");
+             break;
+          case "DoorTrigger":
+             if (inventory.removeItem("Key"))
+             {
+                collider.gameObject.GetComponentInParent<DoorScript>().Open();
+             } 
+             break;
        }
     }
 
