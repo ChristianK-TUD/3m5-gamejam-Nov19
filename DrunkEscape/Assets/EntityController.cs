@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class EntityController : MonoBehaviour
 {
@@ -36,7 +38,7 @@ public class EntityController : MonoBehaviour
 
     void Rotate()
     {
-       transform.Rotate(0f, rotationSpeed * Time.deltaTime, 0f);
+       transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
     }
 
     public bool wobble;
