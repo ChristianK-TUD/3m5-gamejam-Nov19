@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.UI;
+using AndroidActivityIndicatorStyle = UnityEngine.AndroidActivityIndicatorStyle;
 using Vector3 = UnityEngine.Vector3;
 
 public class KeyboardController : MonoBehaviour
@@ -67,7 +70,21 @@ public class KeyboardController : MonoBehaviour
           _rb.velocity = _rb.velocity.normalized * MaxSpeed;
        }
     }
-   
+
+    void OnTriggerEnter(Collider collider)
+    {
+       if (collider.name == "Key")
+       {
+           inventory.AddItem(key, "Key");
+       } else if (collider.name.Contains("door") && !collider.name.Contains("wall"))
+       {
+          if (inventory.removeItem("Key"))
+          {
+             GetComponent<DoorScript>().Open();
+          }
+       }
+    }
+
     private Vector3 _cameraOffset;
 
     private bool _isForward;
@@ -76,7 +93,10 @@ public class KeyboardController : MonoBehaviour
     private bool _isBackward;
 
     public GameObject Camera;
+    public Inventory inventory;
     private Rigidbody _rb;
+
+    public Sprite key;
 
     public float MaxSpeed;
     public float MinSpeed;
