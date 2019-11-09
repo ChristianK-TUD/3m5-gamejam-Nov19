@@ -19,11 +19,16 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+       this.slider.value -= alcoholUse * Time.deltaTime;
     }
 
     public void AddItem(Sprite im, string name)
     {
+       if (name == "Booze")
+       {
+          slider.value = 1;
+       }
+
        //insert in first possible slot
        for (var i = 0; i < 5; i++)
        {
@@ -39,7 +44,7 @@ public class Inventory : MonoBehaviour
 
     private void UpdateImages()
     {
-       for (int i = 0; i < 5; i++)
+       for (var i = 0; i < 5; i++)
        {
           images[i].sprite = sprites[i];
        }
@@ -50,7 +55,7 @@ public class Inventory : MonoBehaviour
        return names.Contains(name);
     }
 
-    public bool removeItem(string name)
+    public bool RemoveItem(string name)
     {
        var result = false;
        for (var i = 0; i < 5; i++)
@@ -66,6 +71,8 @@ public class Inventory : MonoBehaviour
        return result;
     }
 
+    public float alcoholUse;
+
     private Image[] images;
     private string[] names;
     private Sprite[] sprites;
@@ -78,6 +85,7 @@ public class Inventory : MonoBehaviour
     public Image image4;
     public Image image5;
     public Sprite defaultIcon;
+    public Slider slider;
 
     public Inventory(int itemcount)
     {

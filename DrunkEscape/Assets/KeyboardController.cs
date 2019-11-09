@@ -82,7 +82,7 @@ public class KeyboardController : MonoBehaviour
              inventory.AddItem(key, "Key");
              break;
           case "DoorTrigger":
-             if (inventory.removeItem("Key"))
+             if (inventory.RemoveItem("Key"))
              {
                 collider.gameObject.GetComponentInParent<DoorScript>().Open();
              } 
