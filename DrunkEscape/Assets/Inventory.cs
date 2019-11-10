@@ -27,6 +27,11 @@ public class Inventory : MonoBehaviour
        this.slider.value += amount;
     }
 
+    public float getAlcoholLevel()
+    {
+       return this.slider.value;
+    }
+
     public void AddItem(Sprite im, string name)
     {
        //insert in first possible slot

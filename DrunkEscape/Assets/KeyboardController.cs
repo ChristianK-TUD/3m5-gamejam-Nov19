@@ -6,6 +6,7 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 using AndroidActivityIndicatorStyle = UnityEngine.AndroidActivityIndicatorStyle;
+using Random = System.Random;
 using Vector3 = UnityEngine.Vector3;
 
 public class KeyboardController : MonoBehaviour
@@ -54,6 +55,21 @@ public class KeyboardController : MonoBehaviour
              movement = - _rb.velocity.normalized * SlowDownFactor;
           }
        }
+
+       const float maxOffset = 2;
+       const float minOffset = -2;
+
+       var r = new Random();
+
+       _drunkRandomOffset += ((float)r.NextDouble() - 0.5f) * Time.deltaTime;
+
+       if (_drunkRandomOffset > maxOffset) _drunkRandomOffset = maxOffset;
+       if (_drunkRandomOffset < minOffset) _drunkRandomOffset = minOffset;
+
+       //rotate randomly when drunk
+       if (_isForward || _isBackward) movement.x += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 3 + _drunkRandomOffset + 1) * Thrust;
+
+       if (_isLeft || _isRight) movement.z += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 3 + _drunkRandomOffset) * Thrust;
        
        _rb.AddForce(movement);
 
@@ -92,6 +108,8 @@ public class KeyboardController : MonoBehaviour
              break;
        }
     }
+
+    private float _drunkRandomOffset;
 
     private Vector3 _cameraOffset;
 

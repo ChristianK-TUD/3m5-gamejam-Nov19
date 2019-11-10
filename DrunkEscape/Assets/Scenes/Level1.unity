@@ -176,6 +176,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 73085586}
+  - component: {fileID: 73085588}
+  - component: {fileID: 73085587}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -198,6 +200,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &73085587
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73085585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &73085588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73085585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb71eac9b4ed6674cac011b10dce672c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wobble: 1
+  waveHeight: 0.5
+  waveSpeed: 2
+  rotate: 1
+  rotationSpeed: 30
 --- !u!1 &81631827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8119093296572192963, guid: 1b859547d4f8cef4093e669a33d68e83,
@@ -1278,42 +1310,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1 &701793185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5b67a6eb645a4d744aac9e7fb7d3cebb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1737522166}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &701793186
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701793185}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.4386625
-  m_Center: {x: 0.118929744, y: 0, z: -0.00000002980233}
---- !u!114 &701793187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701793185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb71eac9b4ed6674cac011b10dce672c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wobble: 1
-  waveHeight: 0.5
-  waveSpeed: 2
-  rotate: 1
-  rotationSpeed: 30
 --- !u!4 &701793191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5b67a6eb645a4d744aac9e7fb7d3cebb,
@@ -1400,6 +1396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798223851}
   - component: {fileID: 798223850}
+  - component: {fileID: 798223852}
   m_Layer: 0
   m_Name: Booze
   m_TagString: Untagged
@@ -1439,6 +1436,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &798223852
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798223849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0523758
+  m_Center: {x: -0.073020935, y: -0.0109119415, z: 0}
 --- !u!114 &824422668 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 494206905029922292, guid: 3860ef8d93cd46843a42184f2e03466b,
@@ -2728,7 +2738,7 @@ PrefabInstance:
       objectReference: {fileID: 824422668}
     - target: {fileID: 1383911378, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
       propertyPath: alcoholUse
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 1383911378, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
       propertyPath: slider
@@ -2740,6 +2750,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 197815619, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069022498, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 61.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069022498, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 275.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069022498, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 228.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 234675508, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 275.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 234675508, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 228.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 122390377, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 122390377, guid: 3860ef8d93cd46843a42184f2e03466b, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3532,25 +3570,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!1 &1859178137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: f296b3c1a2981a24097d104ee460bc28,
-    type: 3}
-  m_PrefabInstance: {fileID: 832814812}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &1859178138
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859178137}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1859178139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f296b3c1a2981a24097d104ee460bc28,
