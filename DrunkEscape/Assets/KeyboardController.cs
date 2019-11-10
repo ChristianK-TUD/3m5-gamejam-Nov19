@@ -98,9 +98,10 @@ public class KeyboardController : MonoBehaviour
        }
        else if (collider.name.Contains("wooden_door"))
        {
-          if (inventory.RemoveItem("Key"))
+          var door = collider.gameObject.GetComponentInParent<DoorScript>();
+          if (!door.isOpen() && inventory.RemoveItem("Key"))
           {
-             collider.gameObject.GetComponentInParent<DoorScript>().Open();
+             door.Open();
           }
        }
        else if (collider.name == "Booze")

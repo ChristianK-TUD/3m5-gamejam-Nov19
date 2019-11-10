@@ -8,6 +8,8 @@ public class DoorScript : MonoBehaviour
     void Start()
     {
        _rb = GetComponent<Rigidbody>();
+       if (open) Open();
+       else Close();
     }
 
     // Update is called once per frame
@@ -19,13 +21,16 @@ public class DoorScript : MonoBehaviour
     public void Open()
     {
        open = true;
-
-       _rb.constraints = RigidbodyConstraints.FreezePosition | 
-                         RigidbodyConstraints.FreezeRotationX |
-                         RigidbodyConstraints.FreezeRotationY;
+       _rb.constraints = RigidbodyConstraints.None;
     }
 
-    private bool isOpen()
+    public void Close()
+    {
+       open = false;
+       _rb.constraints = RigidbodyConstraints.FreezeAll;
+    }
+
+    public bool isOpen()
     {
        return open;
     }
