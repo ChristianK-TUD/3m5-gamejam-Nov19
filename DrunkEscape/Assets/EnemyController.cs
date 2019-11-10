@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
-        if (Physics.Raycast(transform.position, playerPos.position - this.transform.position, out hit, 40, raycastLayer.value))
+        if (Physics.Raycast(getEyePosition(transform.position), getEyePosition(playerPos.position) - getEyePosition(this.transform.position), out hit, 40, raycastLayer.value))
         {
             if (hit.collider.gameObject.name == "monk")
             {
@@ -74,6 +74,11 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private Vector3 getEyePosition(Vector3 groundPosition)
+    {
+        return new Vector3(groundPosition.x, groundPosition.y + 1.5f, groundPosition.z);
     }
 
     private void OnDrawGizmos()
