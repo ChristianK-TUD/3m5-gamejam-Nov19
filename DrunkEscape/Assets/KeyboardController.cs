@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Mime;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = System.Random;
 using Vector3 = UnityEngine.Vector3;
@@ -116,6 +117,10 @@ public class KeyboardController : MonoBehaviour
        {
           inventory.AddAlcohol(0.5f);
             audioSource.PlayOneShot(soundBurp);
+       }
+       else if (collider.name.Contains("Victory"))
+       {
+          SceneManager.LoadScene("MenuVictoryScene");
        }
     }
 

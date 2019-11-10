@@ -24,6 +24,8 @@ public class Inventory : MonoBehaviour
        slider.value -= alcoholUse * Time.deltaTime;
 
        score.text = ((int) _score).ToString();
+
+       Stats.Points = (int) _score;
     }
 
     public void AddAlcohol(float amount)
@@ -98,6 +100,7 @@ public class Inventory : MonoBehaviour
     public Slider slider;
 
     public Text score;
+    public Text endscreenScore;
 
     public Inventory(int itemcount)
     {
