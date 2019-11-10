@@ -12,14 +12,18 @@ public class Inventory : MonoBehaviour
         images = new [] {image1, image2, image3, image4, image5};
         names = new[] {"", "", "", "", ""};
         sprites = new[] { defaultIcon, defaultIcon, defaultIcon, defaultIcon, defaultIcon};
-
+        _score = 0;
         UpdateImages();
     }
 
     // Update is called once per frame
     private void Update()
     {
-       this.slider.value -= alcoholUse * Time.deltaTime;
+       _score += slider.value * 5 * Time.deltaTime;
+
+       slider.value -= alcoholUse * Time.deltaTime;
+
+       score.text = ((int) _score).ToString();
     }
 
     public void AddAlcohol(float amount)
@@ -83,6 +87,7 @@ public class Inventory : MonoBehaviour
     private Sprite[] sprites;
 
     private int _itemcount;
+    private float _score;
 
     public Image image1;
     public Image image2;
@@ -91,6 +96,8 @@ public class Inventory : MonoBehaviour
     public Image image5;
     public Sprite defaultIcon;
     public Slider slider;
+
+    public Text score;
 
     public Inventory(int itemcount)
     {

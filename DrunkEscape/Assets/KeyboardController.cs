@@ -67,9 +67,9 @@ public class KeyboardController : MonoBehaviour
        if (_drunkRandomOffset < minOffset) _drunkRandomOffset = minOffset;
 
        //rotate randomly when drunk
-       if (_isForward || _isBackward) movement.x += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 3 + _drunkRandomOffset + 1) * Thrust;
+       if (_isForward || _isBackward) movement.x += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 4 + _drunkRandomOffset + 1) * Thrust;
 
-       if (_isLeft || _isRight) movement.z += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 3 + _drunkRandomOffset) * Thrust;
+       if (_isLeft || _isRight) movement.z += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 4 + _drunkRandomOffset) * Thrust;
        
        _rb.AddForce(movement);
 
@@ -92,20 +92,21 @@ public class KeyboardController : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
        Debug.Log(collider.name);
-       switch (collider.name)
+       if (collider.name == "Key")
        {
-          case "Key":
-             inventory.AddItem(key, "Key");
-             break;
-          case "DoorTrigger":
-             if (inventory.RemoveItem("Key"))
-             {
-                collider.gameObject.GetComponentInParent<DoorScript>().Open();
-             } 
-             break;
-          case "Booze":
-             inventory.AddAlcohol(0.5f);
-             break;
+          inventory.AddItem(key, "Key");
+       }
+       else if (collider.name.Contains("wooden_door"))
+       {
+          var door = collider.gameObject.GetComponentInParent<DoorScript>();
+          if (!door.isOpen() && inventory.RemoveItem("Key"))
+          {
+             door.Open();
+          }
+       }
+       else if (collider.name == "Booze")
+       {
+          inventory.AddAlcohol(0.5f);
        }
     }
 
