@@ -7,7 +7,7 @@ public class DoorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       _rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -16,11 +16,13 @@ public class DoorScript : MonoBehaviour
         
     }
 
-
-
     public void Open()
     {
        open = true;
+
+       _rb.constraints = RigidbodyConstraints.FreezePosition | 
+                         RigidbodyConstraints.FreezeRotationX |
+                         RigidbodyConstraints.FreezeRotationY;
        Debug.Log("Door opened!");
     }
 
@@ -29,5 +31,6 @@ public class DoorScript : MonoBehaviour
        return open;
     }
 
+    private Rigidbody _rb;
     public bool open;
 }

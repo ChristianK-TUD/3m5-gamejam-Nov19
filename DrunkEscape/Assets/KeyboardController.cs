@@ -92,20 +92,20 @@ public class KeyboardController : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
        Debug.Log(collider.name);
-       switch (collider.name)
+       if (collider.name == "Key")
        {
-          case "Key":
-             inventory.AddItem(key, "Key");
-             break;
-          case "DoorTrigger":
-             if (inventory.RemoveItem("Key"))
-             {
-                collider.gameObject.GetComponentInParent<DoorScript>().Open();
-             } 
-             break;
-          case "Booze":
-             inventory.AddAlcohol(0.5f);
-             break;
+          inventory.AddItem(key, "Key");
+       }
+       else if (collider.name.Contains("wooden_door"))
+       {
+          if (inventory.RemoveItem("Key"))
+          {
+             collider.gameObject.GetComponentInParent<DoorScript>().Open();
+          }
+       }
+       else if (collider.name == "Booze")
+       {
+          inventory.AddAlcohol(0.5f);
        }
     }
 
