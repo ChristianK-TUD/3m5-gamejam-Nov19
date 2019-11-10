@@ -23,7 +23,6 @@ public class DoorScript : MonoBehaviour
        _rb.constraints = RigidbodyConstraints.FreezePosition | 
                          RigidbodyConstraints.FreezeRotationX |
                          RigidbodyConstraints.FreezeRotationY;
-       Debug.Log("Door opened!");
     }
 
     private bool isOpen()

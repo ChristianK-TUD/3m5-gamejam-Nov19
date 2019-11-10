@@ -67,9 +67,9 @@ public class KeyboardController : MonoBehaviour
        if (_drunkRandomOffset < minOffset) _drunkRandomOffset = minOffset;
 
        //rotate randomly when drunk
-       if (_isForward || _isBackward) movement.x += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 3 + _drunkRandomOffset + 1) * Thrust;
+       if (_isForward || _isBackward) movement.x += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 4 + _drunkRandomOffset + 1) * Thrust;
 
-       if (_isLeft || _isRight) movement.z += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 3 + _drunkRandomOffset) * Thrust;
+       if (_isLeft || _isRight) movement.z += inventory.getAlcoholLevel() * Mathf.Sin(Time.time * 4 + _drunkRandomOffset) * Thrust;
        
        _rb.AddForce(movement);
 
