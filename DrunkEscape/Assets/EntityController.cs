@@ -19,9 +19,10 @@ public class EntityController : MonoBehaviour
        if (rotate) Rotate();
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider collider)
     {
-       gameObject.SetActive(false);
+       if (collider.name == "monk")
+          gameObject.SetActive(false);
     }
 
     // Update is called once per frame
