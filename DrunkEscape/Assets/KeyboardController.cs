@@ -92,7 +92,7 @@ public class KeyboardController : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
        Debug.Log(collider.name);
-       if (collider.name == "Key")
+       if (collider.name.Contains("Key"))
        {
           inventory.AddItem(key, "Key");
        }
@@ -104,7 +104,7 @@ public class KeyboardController : MonoBehaviour
              door.Open();
           }
        }
-       else if (collider.name == "Booze")
+       else if (collider.name.Contains("Booze"))
        {
           inventory.AddAlcohol(0.5f);
        }
