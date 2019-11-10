@@ -10,11 +10,18 @@ using Vector3 = UnityEngine.Vector3;
 
 public class KeyboardController : MonoBehaviour
 {
+    // Audio stuff
+    private AudioSource audioSource;
+    public AudioClip soundBurp;
+    public AudioClip soundDoor;
+    public AudioClip soundKey;
+
     // Start is called before the first frame update
     void Start()
     {
        _rb = GetComponent<Rigidbody>();
        _cameraOffset = Camera.transform.position - transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,6 +101,7 @@ public class KeyboardController : MonoBehaviour
        if (collider.name.Contains("Key"))
        {
           inventory.AddItem(key, "Key");
+            audioSource.PlayOneShot(soundKey);
        }
        else if (collider.name.Contains("wooden_door"))
        {
@@ -101,11 +109,13 @@ public class KeyboardController : MonoBehaviour
           if (!door.isOpen() && inventory.RemoveItem("Key"))
           {
              door.Open();
+                audioSource.PlayOneShot(soundDoor);
           }
        }
        else if (collider.name.Contains("Booze"))
        {
           inventory.AddAlcohol(0.5f);
+            audioSource.PlayOneShot(soundBurp);
        }
     }
 
