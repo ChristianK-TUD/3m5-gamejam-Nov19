@@ -5,7 +5,6 @@ using System.Net.Mime;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
-using AndroidActivityIndicatorStyle = UnityEngine.AndroidActivityIndicatorStyle;
 using Random = System.Random;
 using Vector3 = UnityEngine.Vector3;
 

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public Vector3[] points;
+    public Patrouille patrouille;
     private int destPoint = 0;
     private NavMeshAgent agent;
     private SphereCollider perception;
@@ -27,10 +27,10 @@ public class EnemyController : MonoBehaviour
 
     void GotoNextPoint()
     {
-        if (points.Length == 0)
+        if (patrouille.transforms.Length == 0)
             return;
-        agent.destination = points[destPoint];
-        destPoint = (destPoint + 1) % points.Length;
+        agent.destination = patrouille.transforms[destPoint].position;
+        destPoint = (destPoint + 1) % patrouille.transforms.Length;
     }
 
     private void OnTriggerEnter(Collider other)
