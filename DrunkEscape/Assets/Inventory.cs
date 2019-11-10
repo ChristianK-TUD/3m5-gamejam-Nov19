@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-       _score += slider.value * 5 * Time.deltaTime;
+       _score += (slider.value - 0.2f) * 5f * Time.deltaTime;
 
        slider.value -= alcoholUse * Time.deltaTime;
 

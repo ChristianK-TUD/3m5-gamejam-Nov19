@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     public float maxViewDistance = 20;
     public AudioClip soundChanting;
     private AudioSource audioSource;
-    private int chantCooldown;
+    private int chantCooldown = 100;
     public int minChantCooldown;
     public int maxChantCooldown;
 
