@@ -39,7 +39,6 @@ public class EnemyController : MonoBehaviour
         {
             playerPos = other.gameObject.transform;
             playerInRange = true;
-            //Debug.Log("player in collider");
         }
     }
 
@@ -47,7 +46,6 @@ public class EnemyController : MonoBehaviour
     {
         if(other.name == "monk")
             playerInRange = false;
-        //Debug.Log("player leaves collider...");
     }
 
     void Update()
@@ -64,8 +62,9 @@ public class EnemyController : MonoBehaviour
                 angle = (playerPos.transform.position - transform.position).normalized;
                 Debug.Log(Vector3.Dot(angle, transform.forward) > 0);
                 if (Vector3.Dot(angle, transform.forward) > 0)
-                { // Player is in front of monk and caught
+                { // Player is in front of monk and caught --> GAME OVER
                     Debug.Log("Caught!");
+                    Application.LoadLevel("MenuScene");
                     return;
                 }
                 if (playerInRange) // Player in range but not visible in front - hearing?
