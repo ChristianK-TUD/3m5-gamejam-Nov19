@@ -8,20 +8,18 @@ public class EnemyController : MonoBehaviour
     public Patrouille patrouille;
     private int destPoint = 0;
     private NavMeshAgent agent;
-    private SphereCollider perception;
     private bool playerInRange = false;
     public Transform playerPos;
     private RaycastHit hit;
     public LayerMask raycastLayer;
+    public float maxViewDistance = 20;
 
     private int debug;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        perception = GetComponent<SphereCollider>();
         GotoNextPoint();
-        Debug.Log(perception.ToString());
     }
 
 
@@ -54,7 +52,7 @@ public class EnemyController : MonoBehaviour
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
-        if (Physics.Raycast(getEyePosition(transform.position), getEyePosition(playerPos.position) - getEyePosition(this.transform.position), out hit, 40, raycastLayer.value))
+        if (Physics.Raycast(getEyePosition(transform.position), getEyePosition(playerPos.position) - getEyePosition(this.transform.position), out hit, maxViewDistance, raycastLayer.value))
         {
             if (hit.collider.gameObject.name == "monk")
             {

@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 9111736421431385705}
   - component: {fileID: 4254167928938766414}
   - component: {fileID: 4254167928938766411}
-  - component: {fileID: 6577740192374490183}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -105,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5199469709547727994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 2}
+  m_LocalPosition: {x: -5, y: 0, z: 2.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8888914200489110475}
@@ -126,9 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dcf02131aed0e468f543f85254934b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {x: -5, y: 0, z: -5}
-  - {x: 5, y: 0, z: 5}
+  patrouille: {fileID: 0}
   playerPos: {fileID: 0}
   raycastLayer:
     serializedVersion: 2
@@ -155,19 +152,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!135 &6577740192374490183
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5199469709547727994}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 8}
 --- !u!1 &8541503410210469420
 GameObject:
   m_ObjectHideFlags: 0
