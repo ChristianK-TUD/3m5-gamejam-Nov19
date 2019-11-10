@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-
     public Vector3[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;

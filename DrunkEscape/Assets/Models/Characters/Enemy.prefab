@@ -132,7 +132,7 @@ MonoBehaviour:
   playerPos: {fileID: 0}
   raycastLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!195 &4254167928938766411
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.1
+  m_Speed: 3
   m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 77f54a80d6bae7749a787a7f645b068a,
         type: 3}
       propertyPath: m_Name
-      value: monk
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 77f54a80d6bae7749a787a7f645b068a,
         type: 3}
