@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6941257060992733895}
   - component: {fileID: 7561015751242502548}
-  - component: {fileID: 2172481721013435779}
   - component: {fileID: 6041282068662119799}
   - component: {fileID: 6041282068662119800}
   - component: {fileID: 6041282068662119798}
@@ -46,45 +45,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7300219947331661831}
   m_Mesh: {fileID: 2141334035117751730, guid: 1b859547d4f8cef4093e669a33d68e83, type: 3}
---- !u!23 &2172481721013435779
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7300219947331661831}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 5058969533260449816, guid: 1b859547d4f8cef4093e669a33d68e83, type: 3}
-  - {fileID: -2215430947101639676, guid: 1b859547d4f8cef4093e669a33d68e83, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!54 &6041282068662119799
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -182,6 +142,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6941257060992733895}
     m_Modifications:
+    - target: {fileID: 1714149862413647991, guid: e16fad05900f9d544bdb766e907420e1,
+        type: 3}
+      propertyPath: m_Name
+      value: wooden_door.012
+      objectReference: {fileID: 0}
     - target: {fileID: 2522205977450105033, guid: e16fad05900f9d544bdb766e907420e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,22 +205,17 @@ PrefabInstance:
     - target: {fileID: 2522205977450105033, guid: e16fad05900f9d544bdb766e907420e1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2522205977450105033, guid: e16fad05900f9d544bdb766e907420e1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2522205977450105033, guid: e16fad05900f9d544bdb766e907420e1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714149862413647991, guid: e16fad05900f9d544bdb766e907420e1,
-        type: 3}
-      propertyPath: m_Name
-      value: wooden_door.012
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16fad05900f9d544bdb766e907420e1, type: 3}
