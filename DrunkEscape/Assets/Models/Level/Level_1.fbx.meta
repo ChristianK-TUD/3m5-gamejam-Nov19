@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-
 guid: 1b859547d4f8cef4093e669a33d68e83
 ModelImporter:
   serializedVersion: 26
@@ -74,7 +73,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
