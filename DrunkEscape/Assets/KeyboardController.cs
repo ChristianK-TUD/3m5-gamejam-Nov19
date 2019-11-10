@@ -5,7 +5,6 @@ using System.Net.Mime;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
-using AndroidActivityIndicatorStyle = UnityEngine.AndroidActivityIndicatorStyle;
 using Random = System.Random;
 using Vector3 = UnityEngine.Vector3;
 
@@ -99,7 +98,7 @@ public class KeyboardController : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
        Debug.Log(collider.name);
-       if (collider.name == "Key")
+       if (collider.name.Contains("Key"))
        {
           inventory.AddItem(key, "Key");
             audioSource.PlayOneShot(soundKey);
@@ -113,7 +112,7 @@ public class KeyboardController : MonoBehaviour
                 audioSource.PlayOneShot(soundDoor);
           }
        }
-       else if (collider.name == "Booze")
+       else if (collider.name.Contains("Booze"))
        {
           inventory.AddAlcohol(0.5f);
             audioSource.PlayOneShot(soundBurp);
