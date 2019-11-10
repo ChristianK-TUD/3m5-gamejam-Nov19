@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class EnemyController : MonoBehaviour
     private RaycastHit hit;
     public LayerMask raycastLayer;
     public float maxViewDistance = 20;
+    public AudioClip soundChanting;
+    private AudioSource audioSource;
+    private int chantCooldown;
+    public int minChantCooldown;
+    public int maxChantCooldown;
 
     private int debug;
 
@@ -20,6 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         GotoNextPoint();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -62,13 +69,35 @@ public class EnemyController : MonoBehaviour
                 if (Vector3.Dot(angle, transform.forward) > 0)
                 { // Player is in front of monk and caught --> GAME OVER
                     Debug.Log("Caught!");
-                    Application.LoadLevel("MenuScene");
+                    SceneManager.LoadScene("MenuScene");
                     return;
                 }
                 if (playerInRange) // Player in range but not visible in front - hearing?
                 {
 
                 }
+            }
+        }
+
+        // Sound playing
+        if(audioSource.isPlaying)
+        {
+            return;
+        }
+        else
+        {
+            if(chantCooldown > 0)
+            {
+                if(chantCooldown == 1)
+                {
+                    audioSource.PlayOneShot(soundChanting);
+                }
+                chantCooldown--;
+            }
+            else
+            {
+                // Playing just finished
+                chantCooldown = new System.Random().Next(minChantCooldown, maxChantCooldown);
             }
         }
     }
