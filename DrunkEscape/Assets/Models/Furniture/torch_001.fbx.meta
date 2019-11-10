@@ -3,7 +3,17 @@ guid: 7855c2b7d61e84b4091bf316a6da0e66
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_torch
+    second: {fileID: 2100000, guid: ead182671c5b93b4680c346d7d76bf25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flame
+    second: {fileID: 2100000, guid: 8ad25fe96b5770841bfddae9c4940770, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

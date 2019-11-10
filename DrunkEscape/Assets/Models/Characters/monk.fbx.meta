@@ -3,7 +3,37 @@ guid: 77f54a80d6bae7749a787a7f645b068a
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monk_amulett
+    second: {fileID: 2100000, guid: a0f836281d0fa5e448db2829e6036153, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monk_base_mat
+    second: {fileID: 2100000, guid: b1a984ed7ab3f0e4ea26fc0e2bd0a726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monk_belt
+    second: {fileID: 2100000, guid: 55abe380d75f71c40bf9c73541dcc7bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monk_eyes
+    second: {fileID: 2100000, guid: bf60e9ff85a7073409999f337e7e5ddb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monk_face
+    second: {fileID: 2100000, guid: c25b2433f15a565468a2d7821af80ab7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monk_pupils
+    second: {fileID: 2100000, guid: daf08954df1acb64a804929ab574df03, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

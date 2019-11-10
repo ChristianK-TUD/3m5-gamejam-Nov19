@@ -3,7 +3,22 @@ guid: 621a45b7225df3e4c994774667603c53
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_barrel
+    second: {fileID: 2100000, guid: 92cdfe91f32b73845a189dc2aed5f8a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: W_barrel
+    second: {fileID: 2100000, guid: 26af03e4ebbaf164e93d35aa108c51aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: W_cork
+    second: {fileID: 2100000, guid: de1a42aca71422e4182c4826552cf5cd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
