@@ -3,7 +3,7 @@
 ![](./Resources/splashscreen.PNG "Splashscreen")
 
 ## Summary
-In the 6th gamejam of 3m5, 5 groups of 3-5 people came together to develop games around the topics shown below.
+In the 6th gamejam of 3m5, five groups of 3-5 people came together to develop games around the topics shown below.
 In an early meeting on Saturday, all participants had to vote democratically for 1 of 3 groups, containing 15 random german words each.
 There was no regulation, how many of these topics must be included in the final product.
 
