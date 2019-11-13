@@ -1,6 +1,4 @@
-# 3m5-gamejam-Nov19
-
-November 2019 Gamejam at 3m5
+# DrunkEscape
 
 ## Summary
 In the 6th gamejam of 3m5, 5 groups of 3-5 people came together to develop games around the topics shown below.
