@@ -46,8 +46,8 @@ Topics marked with (*) were included in our game.
 |----------------|-----------------------------|
 | ![](./Resources/victory_screen.PNG "Winning screen") | ![](./Resources/loosing_screen.PNG "Loosing screen") |
 
-| Item to increase score | Item to open locked doors |
-|------------------------|---------------------------|
+| Power-up | Key to open locked doors |
+|----------|--------------------------|
 | ![](./Resources/item_bottle.PNG "Bottle of booze") |  ![](./Resources/item_key.PNG "Key to open doors") |
 
 | Level Overview | Rendering of the main character | 
