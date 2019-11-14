@@ -16,7 +16,7 @@ Our team was developing a 3D casual game, where the player must flee from a mona
 | olsagebiet           | spirituose (*)      | Lappenfarn               |
 | fundamental          | Formatoption        | hinübergewollt           |
 | Einsägen             | Physiologe          | feigen                   |
-| Stiftsgeschichte (*) | wich                | fackel   (*)             |
+| Stiftsgeschichte (*) | wich (*)            | fackel   (*)             |
 | turingmaschine       | Pluswert            | tibetobirmanisch         |
 
 Topics marked with (*) were included in our game.
